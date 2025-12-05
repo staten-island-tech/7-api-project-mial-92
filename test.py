@@ -1,4 +1,4 @@
-""" import requests
+import requests
 
 def getchar(character):
     response = requests.get(f"https://api.disneyapi.dev/character{character.lower()}")
@@ -15,8 +15,8 @@ def getchar(character):
     }
 charinfo = getchar("Hercules")
 print(charinfo)
- """
-import requests
+
+""" import requests
 
 def getchar(character):
     response = requests.get(f"https://api.disneyapi.dev/character")
@@ -30,4 +30,4 @@ def getchar(character):
             return data[i]["name"]
     
 charinfo = getchar("Hercules")
-print(charinfo)
+print(charinfo) """
