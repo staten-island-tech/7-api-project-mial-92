@@ -18,13 +18,14 @@ print(fruitinfo) """
 
 import requests
 
-def getfruit(fruit):
-    fruit = requests.get(f"https://www.fruityvice.com/api/fruit/{fruit.lower()}")
-    if fruit.status_code != 200:
+def character(nintendo):
+    nintendo = requests.get(f"https://www.amiiboapi.com/api/amiibo/?name={nintendo.lower()}")
+    if nintendo.status_code != 200:
         print("Error. Cannot fetch data.")
         return None
-    
-    data = fruit.json()
-    return data
-fruitinfo = getfruit("banana")
-print(fruitinfo)
+    data = nintendo.json()
+    return{
+        "amiibo Series": data["amiiboSeries"]
+    }
+nintendoinfo = character("yoshi")
+print(nintendoinfo)
