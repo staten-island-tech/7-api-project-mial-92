@@ -24,8 +24,9 @@ def character(nintendo):
         print("Error. Cannot fetch data.")
         return None
     data = nintendo.json()
-    return{
-        "amiibo Series": data["amiiboSeries"]
+    return {
+        "name" : data["amiibo"]['character'],
+        "game" : data["amiibo"]["gameSeries"]
     }
 nintendoinfo = character("yoshi")
 print(nintendoinfo)
