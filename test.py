@@ -30,9 +30,16 @@ print(nintendoinfo)
 
 import tkinter
 from tkinter import *
-root = Tk() 
-root.title("Message Reverser")
-root.geometry("400x250")
-prompt = Tk.Label(root, text="Type your message below")
-result_label = Tk.Label(root, text="", font=("Arial", 14, "bold"), fg="blue")
-result_label.pack(pady=15)
+def say_hello():
+    print("Hello there!")
+window = Tk()
+window.title("Button Example")
+my_button = Tk.Button(
+window, 
+text="Say Hello",
+command=say_hello, 
+font=("Arial", 16), 
+bg="lightblue",
+fg="black", 
+relief="raised", 
+padx=10, pady=5)
