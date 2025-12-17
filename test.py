@@ -24,9 +24,15 @@ def character(nintendo):
         print("Error. Cannot fetch data.")
         return None
     data = nintendo.json()
-    return {
-        "name" : data["amiibo"]['character'],
-        "game" : data["amiibo"]["gameSeries"]
-    }
+    return data
 nintendoinfo = character("yoshi")
 print(nintendoinfo)
+
+import tkinter
+from tkinter import *
+root = Tk() 
+root.title("Message Reverser")
+root.geometry("400x250")
+prompt = Tk.Label(root, text="Type your message below")
+result_label = Tk.Label(root, text="", font=("Arial", 14, "bold"), fg="blue")
+result_label.pack(pady=15)
